@@ -21,7 +21,7 @@
   "hosting": [
     {
       "target": "cyrodiil-rewards",
-      "public": "dist",
+      "public": "dist/cyrodiil-rewards",
       "ignore": [
         "firebase.json",
         "**/.*",
