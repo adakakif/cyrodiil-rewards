@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cyrodiil-rewards"
+  },
+  "targets": {
+    "cyrodiil-rewards": {
+      "hosting": {
+        "cyrodiil-rewards": [
+          "cyrodiil-rewards"
+        ]
+      }
+    }
+  }
+}

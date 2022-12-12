@@ -97,8 +97,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "cyrodiil-rewards:build:production",
+            "firebaseProject": "cyrodiil-rewards",
+            "firebaseHostingSite": "cyrodiil-rewards"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "25689622-ebe4-483f-8fb6-bd7a8b635b23"
   }
 }
