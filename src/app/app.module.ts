@@ -10,11 +10,18 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { HomeComponent } from './components/home/home.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MonthlyCountdownComponent } from './components/monthly-countdown/monthly-countdown.component';
+import { WeeklyCountdownComponent } from './components/weekly-countdown/weekly-countdown.component';
+import { TimerComponent } from './components/timer/timer.component';
+import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MonthlyCountdownComponent,
+    WeeklyCountdownComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    {provide: FIREBASE_OPTIONS, useValue: environment.firebase},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

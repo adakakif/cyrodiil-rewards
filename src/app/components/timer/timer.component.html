@@ -1,0 +1,10 @@
+<ng-container *ngIf="$timerContainer | async as time; else loading">
+    <div *ngIf="time.days != '00'">{{time.days}} {{ time.days == '01' || time.days == '00' ? 'day' : 'days' }}</div>
+    <div *ngIf="!(time.days == '00' && time.hours == '00')">{{time.hours}} {{ time.hours == '01' || time.hours == '00' ? 'hour' : 'hours' }}</div>
+    <div *ngIf="!(time.days == '00' && time.hours == '00' && time.minutes == '00')">{{time.minutes}} {{ time.minutes == '01' || time.minutes == '00' ? 'minute' : 'minutes' }}</div>
+    <div>{{time.seconds}} {{time.seconds == '01' || time.seconds == '00' ? 'second' : 'seconds'}}</div>
+</ng-container>
+
+<ng-template #loading>
+    Loading stuff...
+</ng-template>
