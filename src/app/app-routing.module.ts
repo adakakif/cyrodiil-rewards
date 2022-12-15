@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {MonthlyCountdownComponent} from "./components/monthly-countdown/monthly-countdown.component";
 import {WeeklyCountdownComponent} from "./components/weekly-countdown/weekly-countdown.component";
+import {GiniComponent} from "./components/gini/gini.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'monthly-countdown', component: MonthlyCountdownComponent },
   { path: 'weekly-countdown', component: WeeklyCountdownComponent },
+  { path: 'gini', component: GiniComponent },
   { path: '**',   redirectTo: '/', pathMatch: 'full' },
 ];
 

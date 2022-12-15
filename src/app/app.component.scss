@@ -1,0 +1,33 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+500, 600, 700
+
+- Line heights
+Default: 1
+1.1, 1.05, 1.2
+
+--- 02 SHADOWS
+
+--- 03 BORDER-RADIUS
+
+--- 04 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+.router-outlet {
+  min-height: calc(100vh - 12.8rem);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}

@@ -1,0 +1,103 @@
+<div class="page">
+
+    <h1>Gini Algoritması ile baş ağrısı tanısı.</h1>
+
+    <form [formGroup]="form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Egitim</mat-label>
+            <mat-select formControlName="egitim">
+                <mat-option [value]=true>Evet</mat-option>
+                <mat-option [value]=false>Hayır</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Yas</mat-label>
+            <mat-select formControlName="yas">
+                <mat-option [value]=true>Evet</mat-option>
+                <mat-option [value]=false>Hayır</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Cinsiyet</mat-label>
+            <mat-select formControlName="cinsiyet">
+                <mat-option [value]=true>Evet</mat-option>
+                <mat-option [value]=false>Hayır</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Kabul</mat-label>
+            <mat-select formControlName="kabul">
+                <mat-option [value]=true>Evet</mat-option>
+                <mat-option [value]=false>Hayır</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="addData()" [disabled] = "!form.valid">Ekle</button>
+    </form>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="egitim">
+            <th mat-header-cell *matHeaderCellDef> Egitim</th>
+            <td mat-cell *matCellDef="let element"> {{element.egitim}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="yas">
+            <th mat-header-cell *matHeaderCellDef> Yas</th>
+            <td mat-cell *matCellDef="let element"> {{element.yas}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cinsiyet">
+            <th mat-header-cell *matHeaderCellDef> Cinsiyet</th>
+            <td mat-cell *matCellDef="let element"> {{element.cinsiyet}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="kabul">
+            <th mat-header-cell *matHeaderCellDef> Kabul</th>
+            <td mat-cell *matCellDef="let element"> {{element.kabul}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <button mat-raised-button color="primary" (click)="gini()">Hesapla</button>
+
+    <ng-container *ngFor="let result of giniResultsWithTables">
+
+        <h1>{{result.text}}</h1>
+
+        <ng-container *ngIf="result.table">
+            <table mat-table [dataSource]="result.table" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="egitim">
+                    <th mat-header-cell *matHeaderCellDef> Egitim</th>
+                    <td mat-cell *matCellDef="let element"> {{element.egitim}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="yas">
+                    <th mat-header-cell *matHeaderCellDef> Yas</th>
+                    <td mat-cell *matCellDef="let element"> {{element.yas}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cinsiyet">
+                    <th mat-header-cell *matHeaderCellDef> Cinsiyet</th>
+                    <td mat-cell *matCellDef="let element"> {{element.cinsiyet}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="kabul">
+                    <th mat-header-cell *matHeaderCellDef> Kabul</th>
+                    <td mat-cell *matCellDef="let element"> {{element.kabul}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </ng-container>
+    </ng-container>
+</div>

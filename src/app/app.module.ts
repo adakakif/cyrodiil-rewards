@@ -14,6 +14,13 @@ import { MonthlyCountdownComponent } from './components/monthly-countdown/monthl
 import { WeeklyCountdownComponent } from './components/weekly-countdown/weekly-countdown.component';
 import { TimerComponent } from './components/timer/timer.component';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
+import { GiniComponent } from './components/gini/gini.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,22 +28,29 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
     HomeComponent,
     MonthlyCountdownComponent,
     WeeklyCountdownComponent,
-    TimerComponent
+    TimerComponent,
+    GiniComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    provideStorage(() => getStorage()),
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        provideFunctions(() => getFunctions()),
+        provideStorage(() => getStorage()),
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase},
   ],

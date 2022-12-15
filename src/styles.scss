@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-size: 62.5%;}
+body {
+  /* general settings */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//Prevent white space under images because images are inline elements
+img {
+  display: block;
+}
+
+/***************************/
+/* REUSABLE STYLES */
+/***************************/
+
+/* Disable CSS Hyperlink(<a>) styles to default */
+.del-hyperlink {
+  text-decoration: none !important;
+}
+.del-hyperlink:link    { color: inherit; text-decoration: underline; }
+.del-hyperlink:visited { color: inherit; text-decoration: underline; }
+.del-hyperlink:hover   { color: inherit; text-decoration: underline; }
+.del-hyperlink:active  { color: inherit; text-decoration: underline; }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
