@@ -21,6 +21,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ReactiveFormsModule} from "@angular/forms";
         MatButtonModule,
         MatFormFieldModule,
         MatSelectModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatProgressSpinnerModule
     ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase},

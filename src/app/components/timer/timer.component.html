@@ -1,10 +1,26 @@
-<ng-container *ngIf="$timerContainer | async as time; else loading">
-    <div *ngIf="time.days != '00'">{{time.days}} {{ time.days == '01' || time.days == '00' ? 'day' : 'days' }}</div>
-    <div *ngIf="!(time.days == '00' && time.hours == '00')">{{time.hours}} {{ time.hours == '01' || time.hours == '00' ? 'hour' : 'hours' }}</div>
-    <div *ngIf="!(time.days == '00' && time.hours == '00' && time.minutes == '00')">{{time.minutes}} {{ time.minutes == '01' || time.minutes == '00' ? 'minute' : 'minutes' }}</div>
-    <div>{{time.seconds}} {{time.seconds == '01' || time.seconds == '00' ? 'second' : 'seconds'}}</div>
-</ng-container>
+<div class="component">
+    <ng-container *ngIf="$timerContainer | async as time; else loading">
+        <div class="time-container">
+            <div class="flex-container" *ngIf="time.days != '00'">
+                <div class="time-item">{{time.days}}</div>
+                <div class="time-unit">{{ time.days == '01' || time.days == '00' ? 'day' : 'days' }}</div>
+            </div>
+            <div class="flex-container" *ngIf="!(time.days == '00' && time.hours == '00')">
+                <div class="time-item">{{time.hours}}</div>
+                <div class="time-unit">{{ time.hours == '01' || time.hours == '00' ? 'hour' : 'hours' }}</div>
+            </div>
+            <div class="flex-container" *ngIf="!(time.days == '00' && time.hours == '00' && time.minutes == '00')">
+                <div class="time-item">{{time.minutes}}</div>
+                <div class="time-unit">{{ time.minutes == '01' || time.minutes == '00' ? 'minute' : 'minutes' }}</div>
+            </div>
+            <div class="flex-container">
+                <div class="time-item">{{time.seconds}}</div>
+                <div class="time-unit">{{time.seconds == '01' || time.seconds == '00' ? 'second' : 'seconds'}}</div>
+            </div>
+        </div>
+    </ng-container>
 
-<ng-template #loading>
-    Loading stuff...
-</ng-template>
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+</div>

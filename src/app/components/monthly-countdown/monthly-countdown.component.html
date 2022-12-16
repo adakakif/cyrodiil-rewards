@@ -1,5 +1,11 @@
-<ng-container *ngIf="($seconds | async) as seconds; else defaultTmpl">
-    <app-timer [secondsInput]="seconds"></app-timer>
-</ng-container>
+<div class="page">
+    <div class="section">
+        <ng-container *ngIf="($seconds | async) as seconds; else defaultTmpl">
+            <app-timer [secondsInput]="seconds"></app-timer>
+        </ng-container>
 
-<ng-template #defaultTmpl>Default Template</ng-template>
+        <ng-template #defaultTmpl>
+            <mat-spinner></mat-spinner>
+        </ng-template>
+    </div>
+</div>

@@ -13,6 +13,8 @@ export class MonthlyCountdownComponent implements OnInit {
 
   $seconds!: Observable<number>;
 
+  loading = false;
+
   constructor(private countdownService: CountdownService) { }
 
   ngOnInit () {
