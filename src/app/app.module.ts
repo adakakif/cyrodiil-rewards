@@ -14,7 +14,6 @@ import { MonthlyCountdownComponent } from './components/monthly-countdown/monthl
 import { WeeklyCountdownComponent } from './components/weekly-countdown/weekly-countdown.component';
 import { TimerComponent } from './components/timer/timer.component';
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
-import { GiniComponent } from './components/gini/gini.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
@@ -29,8 +28,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     HomeComponent,
     MonthlyCountdownComponent,
     WeeklyCountdownComponent,
-    TimerComponent,
-    GiniComponent
+    TimerComponent
   ],
     imports: [
         BrowserModule,

@@ -1,11 +1,24 @@
 <div class="page">
-    <div class="section">
-        <ng-container *ngIf="($seconds | async) as seconds; else defaultTmpl">
-            <app-timer [secondsInput]="seconds"></app-timer>
+    <div class="observable">
+        <ng-container *ngIf="($seconds | async) as seconds; else loading">
+
+            <div class="season-decider">
+                <ng-container *ngIf="seconds.remainingTime >= 0; else midSeason">
+<!--                    <div>{{seconds.season ? 'Current PvP season ends in' : 'Mid season ends in '}}</div>-->
+                    <app-timer [secondsInput]="seconds.remainingTime"></app-timer>
+                </ng-container>
+
+                <ng-template #midSeason>
+                    <div></div>
+                    <div class="mid-season background-blur">Waiting for new data...</div>
+                </ng-template>
+            </div>
         </ng-container>
 
-        <ng-template #defaultTmpl>
-            <mat-spinner></mat-spinner>
+        <ng-template #loading>
+            <div class="background-blur">
+                <mat-spinner></mat-spinner>
+            </div>
         </ng-template>
     </div>
 </div>
