@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.web.cyrodiil_rewards.twa",
+      "sha256_cert_fingerprints":
+        ["44:F2:A2:C0:BF:E3:C2:31:72:D3:97:36:7F:E2:64:7D:58:7A:F3:2B:90:BA:3B:36:93:6C:01:53:20:61:3F:FC"]
+    }
+  }
+]
