@@ -1,4 +1,7 @@
 <div class="page">
+    <button routerLink="/" class="escape" mat-fab color="primary">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
     <div class="observable">
         <ng-container *ngIf="($seconds | async) as seconds; else loading">
 
@@ -7,7 +10,6 @@
 <!--                    <div>{{seconds.season ? 'Current PvP season ends in' : 'Mid season ends in '}}</div>-->
                     <app-timer [secondsInput]="seconds.remainingTime"></app-timer>
                 </ng-container>
-
                 <ng-template #midSeason>
                     <div></div>
                     <div class="mid-season background-blur">Waiting for new data...</div>

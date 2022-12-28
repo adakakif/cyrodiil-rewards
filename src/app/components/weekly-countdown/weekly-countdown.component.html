@@ -1,4 +1,7 @@
 <div class="page">
+    <button routerLink="/" class="escape" mat-fab color="primary">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
     <div class="observable">
         <ng-container *ngIf="($seconds | async) as seconds; else loading">
             <app-timer [secondsInput]="seconds"></app-timer>

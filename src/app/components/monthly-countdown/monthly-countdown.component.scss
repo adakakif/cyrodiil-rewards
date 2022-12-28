@@ -14,6 +14,8 @@
 
   //background-image: url(../../../assets/cyrodiil.png);
   background-size: cover;
+
+  position: relative;
 }
 
 .background-blur {
@@ -24,4 +26,10 @@
 
 .mid-season {
   color: #111;
+}
+
+.escape {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
 }

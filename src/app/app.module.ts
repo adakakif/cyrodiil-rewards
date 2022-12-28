@@ -23,6 +23,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatInputModule} from "@angular/material/input";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
         ReactiveFormsModule,
         MatProgressSpinnerModule,
         MatInputModule,
-        MatGridListModule
+        MatGridListModule,
+        MatIconModule
     ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase},
