@@ -21,6 +21,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatInputModule} from "@angular/material/input";
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
         MatFormFieldModule,
         MatSelectModule,
         ReactiveFormsModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatInputModule,
+        MatGridListModule
     ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase},
